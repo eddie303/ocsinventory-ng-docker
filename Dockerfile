@@ -26,7 +26,8 @@ RUN rm -f /etc/localtime && ln -s /usr/share/zoneinfo/Europe/Bucharest /etc/loca
  && phpenmod gd \
  && phpenmod soap \
  && cd \
- && rm -rf /tmp/ocsserver
+ && rm -rf /tmp/ocsserver \
+ && chmod 755 /usr/local/bin/docker-entrypoint.sh
 
 # Apache musthave env vars
 ENV APACHE_RUN_USER www-data
