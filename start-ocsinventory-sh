@@ -1,11 +1,10 @@
 #!/bin/sh
 docker run \
 --name ocs \
--e TEST="test"  \
 -e DB_USER="ocsusr" \
--e DB_PASS="Ocsp455" \
+-e DB_PASS="ocspass" \
 -e DB_NAME="ocsweb" \
--e MYSQL_ROOT_PASSWORD="N4mtudom1!" \
+-e MYSQL_ROOT_PASSWORD="password" \
 --link apia-mariadb:db \
--p 8081:80 \
+-p 80:80 \
 -d eddie303/ocsinventory-ng
