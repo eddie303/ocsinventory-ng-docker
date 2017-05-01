@@ -5,6 +5,6 @@ docker run \
 -e DB_PASS="ocspass" \
 -e DB_NAME="ocsweb" \
 -e MYSQL_ROOT_PASSWORD="password" \
---link apia-mariadb:db \
+--link mysql_instance:db \
 -p 80:80 \
 -d eddie303/ocsinventory-ng
