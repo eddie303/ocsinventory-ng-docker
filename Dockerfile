@@ -10,7 +10,7 @@ RUN rm -f /etc/localtime && ln -s /usr/share/zoneinfo/Europe/Bucharest /etc/loca
  && echo "Europe/Bucharest" > /etc/timezone \
  && apt-get update \
  && apt-get -y dist-upgrade \
- && apt-get install -y make php php-gettext php-mbstring php-curl php-gd php-soap apache2 libapache2-mod-php php-mysql mysql-client git\
+ && apt-get install -y make php php-gettext php-mbstring php-curl php-gd php-soap php-zip apache2 libapache2-mod-php php-mysql mysql-client git\
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/* \
  && rm -rf /var/www/html/* \
@@ -27,6 +27,7 @@ RUN rm -f /etc/localtime && ln -s /usr/share/zoneinfo/Europe/Bucharest /etc/loca
  && phpenmod curl \
  && phpenmod gd \
  && phpenmod soap \
+ && phpenmod zip \
  && cd \
  && rm -rf /tmp/ocsserver \
  && chmod 755 /usr/local/bin/docker-entrypoint.sh
