@@ -22,6 +22,7 @@ RUN rm -f /etc/localtime && ln -s /usr/share/zoneinfo/Europe/Bucharest /etc/loca
  && cat ../respond.txt | ./setup.sh \
  && a2enconf z-ocsinventory-server \
  && a2enconf ocsinventory-reports \
+ && a2enmod ssl \
  && phpenmod curl \
  && phpenmod gd \
  && phpenmod soap \
