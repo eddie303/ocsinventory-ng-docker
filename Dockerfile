@@ -23,12 +23,15 @@ RUN rm -f /etc/localtime && ln -s /usr/share/zoneinfo/Europe/Bucharest /etc/loca
  && a2enconf z-ocsinventory-server \
  && a2enconf ocsinventory-reports \
  && a2enmod ssl \
+ && a2ensite default-ssl \
  && phpenmod curl \
  && phpenmod gd \
  && phpenmod soap \
  && cd \
  && rm -rf /tmp/ocsserver \
  && chmod 755 /usr/local/bin/docker-entrypoint.sh
+
+COPY index.html /var/www/html/
 
 # Apache musthave env vars
 ENV APACHE_RUN_USER www-data
