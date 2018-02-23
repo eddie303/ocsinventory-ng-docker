@@ -1,5 +1,4 @@
 y
-y
 localhost
 3306
 /usr/sbin/apache2ctl
@@ -17,6 +16,9 @@ y
 y
 y
 y
+/usr/local/share/perl/5.22.1
+y
+y
+y
 /usr/share/ocsinventory-reports
 /var/lib/ocsinventory-reports
-
