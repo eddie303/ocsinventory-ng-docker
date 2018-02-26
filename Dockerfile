@@ -15,6 +15,8 @@ RUN rm -f /etc/localtime && ln -s /usr/share/zoneinfo/Europe/Bucharest /etc/loca
  && rm -rf /var/www/html/* \
  && a2enmod rewrite \
  && a2enmod perl \
+ && a2enmod ssl \
+ && a2ensite default-ssl \
  && cd /tmp \
  && git clone https://github.com/OCSInventory-NG/OCSInventory-Server.git ocsserver \
  && git clone https://github.com/OCSInventory-NG/OCSInventory-ocsreports.git ocsserver/ocsreports \
