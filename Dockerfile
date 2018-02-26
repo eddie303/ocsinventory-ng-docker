@@ -28,7 +28,11 @@ RUN rm -f /etc/localtime && ln -s /usr/share/zoneinfo/Europe/Bucharest /etc/loca
  && phpenmod gd \
  && phpenmod soap \
  && cd \
- && rm -rf /tmp/ocsserver
+ && rm -rf /tmp/ocsserver \
+ && rm -rf /tmp/respond.txt \
+ && chown www-data:www-data /usr/share/ocsinventory-reports \
+ && echo '<?php header("Location:/ocsreports/index.php"); ?>' > /var/www/html/index.php
+ && chmod +x /usr/local/bin/docker-entrypoint.sh
 
 # Apache musthave env vars
 ENV APACHE_RUN_USER www-data
