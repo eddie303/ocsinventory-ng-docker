@@ -32,9 +32,9 @@ sed -i "s/PerlSetVar OCS_DB_PWD.*/PerlSetVar OCS_DB_PWD $DB_PASS_INT/" /etc/apac
 if [ "$DB_EXISTS" != "$DB_NAME_INT" ]; then
         echo "Database doesn't exist, creating..."
         mysql -h $DB_HOSTNAME -u root -p"$MYSQL_ROOT_PASSWORD" -e "CREATE DATABASE $DB_NAME_INT; GRANT ALL PRIVILEGES ON $DB_NAME_INT.* TO '$DB_USER_INT'@'%' IDENTIFIED BY '$DB_PASS_INT';";
-	if [ -f "/etc/ocsinventory-server/install.php" ]; then
-		mv /etc/ocsinventory-server/install.php /usr/share/ocsinventory-reports/ocsreports/install.php
-	fi
+#	if [ -f "/etc/ocsinventory-server/install.php" ]; then
+#		mv /etc/ocsinventory-server/install.php /usr/share/ocsinventory-reports/ocsreports/install.php
+#	fi
 else
 	if [ -f "/usr/share/ocsinventory-reports/ocsreports/install.php" ]; then
 		mv /usr/share/ocsinventory-reports/ocsreports/install.php /etc/ocsinventory-server/

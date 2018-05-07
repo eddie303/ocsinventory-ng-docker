@@ -14,4 +14,5 @@ $ docker run \
 -p 80:80 \
 -d eddie303/ocsinventory-ng
 ```
-Note: If the database already exists and is accessible by the user and password provided, there is no need to provide the MYSQL_ROOT_PASSWORD environment variable.
+Note: If the database already exists and is accessible by the user and password provided, there is no need to provide the MYSQL_ROOT_PASSWORD environment variable. Also, destroy and restart the container as soon as the install procedure is completed in order to delete install.php from the webroot!
+
