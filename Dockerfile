@@ -34,7 +34,8 @@ RUN rm -f /etc/localtime && ln -s /usr/share/zoneinfo/Europe/Bucharest /etc/loca
  && rm -rf /tmp/respond.txt \
  && mkdir  touch /usr/share/ocsinventory-reports/ocsreports/vendor \
  && touch /usr/share/ocsinventory-reports/ocsreports/vendor/autoload.php \
- && chown www-data:www-data /usr/share/ocsinventory-reports \
+ && chown -R www-data:www-data /var/lib/ocsinventory-reports/ \
+ && chown -R www-data:www-data /usr/share/ocsinventory-reports \
  && echo '<?php header("Location:/ocsreports/index.php"); ?>' > /var/www/html/index.php \
  && chmod +x /usr/local/bin/docker-entrypoint.sh
 
