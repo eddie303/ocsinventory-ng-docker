@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:18.04
 MAINTAINER Eduard Istvan Sas <eduard.istvan.sas@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
